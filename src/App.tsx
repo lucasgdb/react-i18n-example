@@ -46,7 +46,7 @@ function App() {
 
         <button
           onClick={handleChangeLanguage}
-          className="change-language-button"
+          className="switch-language-button"
         >
           {t("change to")}{" "}
           {language === "ptBR" ? t("english") : t("portuguese")}
