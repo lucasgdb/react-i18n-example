@@ -15,7 +15,6 @@ function App() {
   const handleChangeLanguage = () => {
     if (i18n.language === "ptBR") {
       i18n.changeLanguage("enUS");
-
       return;
     }
 
