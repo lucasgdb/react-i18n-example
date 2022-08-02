@@ -4,25 +4,22 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 
 import reactLogo from "./assets/react.svg";
-import i18n from "./i18n/i18n";
 
 function App() {
-  const [language, setLanguage] = useState("ptBR");
   const [count, setCount] = useState(0);
 
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
 
   const handleCount = () => setCount((count) => count + 1);
 
   const handleChangeLanguage = () => {
-    if (language === "ptBR") {
+    if (i18n.language === "ptBR") {
       i18n.changeLanguage("enUS");
-      setLanguage("enUS");
+
       return;
     }
 
     i18n.changeLanguage("ptBR");
-    setLanguage("ptBR");
   };
 
   return (
@@ -49,7 +46,7 @@ function App() {
           className="switch-language-button"
         >
           {t("change to")}{" "}
-          {language === "ptBR" ? t("english") : t("portuguese")}
+          {i18n.language === "ptBR" ? t("english") : t("portuguese")}
         </button>
 
         <p>
